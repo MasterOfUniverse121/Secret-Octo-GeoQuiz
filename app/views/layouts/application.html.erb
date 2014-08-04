@@ -47,9 +47,9 @@
 </ul>
   <div class="container">
    <div class="hello">
-    <% if session['username'] %>
-     You're signed in as <%= session['username'] %>. Welcome to GeoQuiz, <%= session['username'] %>!
-    <button><a href="/sessions/destroy">Not You?</a></button>
+     <% if session['username'] %>
+     <h3><small>You're signed in as <%= session['username'] %>. Welcome to GeoQuiz, <%= session['username'] %>! &nbsp</small></h3>
+    <button><a href="/sessions/destroy">Not You? Click here.</a></button>
     <% else %>
     <button><a href="/sessions/new">Sign In</a></button>
     <% end %>
@@ -69,10 +69,13 @@
 <div class = "container">
   <div class = "row">
     <div class = "col-md-4 col-md-offset-4">
+      <div class ="hello">
 <footer>
   <p>Created by: Tobe Obochi</p>
   <p>Copyright 2014.</p>
+  <p>Thank you for coming to GeoQuiz. If you love this website, please <button><a href="/donate">Donate</a></button></p>
 </footer>
+      </div>
     </div>
   </div>
 </div>

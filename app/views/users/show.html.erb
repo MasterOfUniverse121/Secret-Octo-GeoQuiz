@@ -16,7 +16,10 @@
   <strong>Pic</strong>:<br />
   <p><img src="<%= @user.pic %>" alt="Pic" height="200px" width="200px"></p>
 </div>
+<% if session['username'] == @user.name %>
 <div class="hello">
 <button class="hooray"><a href="/users/<%= @user.id %>/edit">Edit</a></button>
 <button class="hooray"><a href="/users/<%= @user.id %>/destroy">Destroy</a></button>
 </div>
+<% else %>
+<% end %>

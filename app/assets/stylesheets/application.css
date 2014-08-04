@@ -49,7 +49,7 @@ button:active
 	-webkit-animation: none;
 	animation: none;
 }
-footer, .logo, .hello, h1, form, .pine{
+footer, .logo, .hello, h1, form, .pine, h3{
   text-align: center;
 }
  h2{

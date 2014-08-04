@@ -1,4 +1,6 @@
-<h1>Users</h1>
+<h1>Users
+<br>
+<small>Hello, welcome to Users. Please use squarish images for your profiles pictures, as they will turn out the best. Thanks!</small></h1>
 <button class="hooray"><a href="/new_user">Add a New User</a></button>
 
 <table class="table">
@@ -22,8 +24,6 @@
           <td><%= user.bio %></td>
           <td><img src="<%= user.pic %>" alt="Pic" height="100px" width="100px"></td>
           <td><button class="hooray"><a href="/users/<%= user.id %>">Show</a></button></td>
-          <td><button class="hooray"><a href="/users/<%= user.id %>/edit">Edit</a></button></td>
-          <td><button class="hooray"><a href="/users/<%= user.id %>/destroy">Destroy</a></button></td>
     </tr>
   <% end %>
   </tbody>
