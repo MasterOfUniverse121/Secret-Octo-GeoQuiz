@@ -1,0 +1,33 @@
+<h1>Quiz #<%= @quiz.id %></h1>
+
+<div>
+  <strong>Chapter number</strong>:<br />
+  <p><%= @quiz.chapter_number %></p>
+</div>
+<div>
+  <strong>Chapter name</strong>:<br />
+  <p><%= @quiz.chapter_name %></p>
+</div>
+<div>
+  <strong>Number of questions</strong>:<br />
+  <p><%= @quiz.number_of_questions %></p>
+</div>
+<div>
+  <strong>User</strong>:<br />
+  <p><%= @quiz.user_id %></p>
+</div>
+<div>
+  <strong>Score</strong>:<br />
+  <p><%= @quiz.score %></p>
+</div>
+<div>
+  <strong>Number answered</strong>:<br />
+  <p><%= @quiz.number_answered %></p>
+</div>
+<div>
+  <strong>Completed</strong>:<br />
+  <p><%= @quiz.completed? %></p>
+</div>
+
+<a href="/quizzes/<%= @quiz.id %>/edit">Edit</a> |
+<a href="/quizzes/<%= @quiz.id %>/destroy">Destroy</a>

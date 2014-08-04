@@ -1,0 +1,30 @@
+<h1>Users</h1>
+<button class="hooray"><a href="/new_user">Add a New User</a></button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Bio</th>
+      <th>Pic</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.bio %></td>
+          <td><img src="<%= user.pic %>" alt="Pic" height="100px" width="100px"></td>
+          <td><button class="hooray"><a href="/users/<%= user.id %>">Show</a></button></td>
+          <td><button class="hooray"><a href="/users/<%= user.id %>/edit">Edit</a></button></td>
+          <td><button class="hooray"><a href="/users/<%= user.id %>/destroy">Destroy</a></button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" href="http://www.favicongenerator.com/favicon2/search-20140722-favicon.ico">
+  <script src="//code.jquery.com/jquery-git2.js"></script>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <meta charset="utf-8">
   <title>GeoQuiz</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <ul class="nav nav-pills nav-justified">
+  <li class="active"><a href="/show">Home</a></li>
+  <li class="active"><a href="/users">Users</a></li>
+    <li class="active"><a href="/new_quiz">Add a new quiz</a></li>
+  <button class="yay"><li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Geometry <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/1">Chapter 1: Introduction to Geometry</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/2">Chapter 2: Basic Concepts and Proofs</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/3">Chapter 3: Congruent Triangles</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/4">Chapter 4: Lines in the Plane</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/5">Chapter 5: Parallel Lines and Related Figures</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/6">Chapter 6: Lines and Planes in Space</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/7">Chapter 7: Polygons</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/8">Chapter 8: Similar Polygons</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/9">Chapter 9: The Pyhtagorean Theorem</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/10">Chapter 10: Circles</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/11">Chapter 11: Area</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/12">Chapter 12: Surface Area and Volume</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/13">Chapter 13: Coordinate Geomtery Extended</a></li>
+    </ul>
+    </li></button>
+</ul>
+  <div class="container">
+   <div class="hello">
+    <% if session['username'] %>
+    You're signed in, <%= session['username'] %>
+    <button><a href="/sessions/destroy">Sign Out</a></button>
+    <% else %>
+    <button><a href="/sessions/new">Sign In</a></button>
+    <% end %>
+  </div>
+  <br>
+  <br>
 
 <%= yield %>
-
+  </div>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-4 col-md-offset-4">
+<footer>
+  <p>Created by: Tobe Obochi</p>
+  <p>Copyright 2014.</p>
+</footer>
+    </div>
+  </div>
+</div>
 </body>
 </html>

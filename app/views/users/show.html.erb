@@ -1,0 +1,22 @@
+<h1><%= @user.name %></h1>
+
+<div class="hello">
+  <strong>Name</strong>:<br />
+  <p><%= @user.name %></p>
+</div>
+<div class="hello">
+  <strong>Email</strong>:<br />
+  <p><%= @user.email %></p>
+</div>
+<div class="hello">
+  <strong>Bio</strong>:<br />
+  <p><%= @user.bio %></p>
+</div>
+<div class="hello">
+  <strong>Pic</strong>:<br />
+  <p><img src="<%= @user.pic %>" alt="Pic" height="200px" width="200px"></p>
+</div>
+<div class="hello">
+<button class="hooray"><a href="/users/<%= @user.id %>/edit">Edit</a></button>
+<button class="hooray"><a href="/users/<%= @user.id %>/destroy">Destroy</a></button>
+</div>

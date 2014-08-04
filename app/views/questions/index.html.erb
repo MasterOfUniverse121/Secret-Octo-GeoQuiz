@@ -1,0 +1,43 @@
+<h1>Questions</h1>
+
+<p><a href="/new_question">Add a New Question</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quiz</th>
+      <th>Query</th>
+      <th>Correct answer</th>
+      <th>User answer</th>
+      <th>Author</th>
+      <th>Wrong answer 1</th>
+      <th>Wrong answer 2</th>
+      <th>Wrong answer 3</th>
+      <th>Answered</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @questions.each do |question| %>
+    <tr>
+          <td><%= question.quiz_id %></td>
+          <td><%= question.query %></td>
+          <td><%= question.correct_answer %></td>
+          <td><%= question.user_answer %></td>
+          <td><%= question.author %></td>
+          <td><%= question.wrong_answer_1 %></td>
+          <td><%= question.wrong_answer_2 %></td>
+          <td><%= question.wrong_answer_3 %></td>
+          <td><%= question.answered %></td>
+          <td><a href="/questions/<%= question.id %>">Show</a>
+        </td>
+      <td><a href="/questions/<%= question.id %>/edit">Edit</a></td>
+      <td><a href="/questions/<%= question.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

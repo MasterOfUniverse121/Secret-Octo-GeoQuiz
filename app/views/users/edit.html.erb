@@ -1,0 +1,25 @@
+<h1>Editing User #<%= @user.id %></h1>
+
+<form action="/users/<%= @user.id %>/update">
+  <div>
+    <label for="name">Name</label><br />
+    <input id="name" name="name" value="<%= @user.name  %>" type="text" />
+  </div>
+  <div>
+    <label for="email">Email</label><br />
+    <input id="email" name="email" value="<%= @user.email  %>" type="text" />
+  </div>
+  <div>
+    <label for="bio">Bio</label><br />
+    <input id="bio" name="bio" value="<%= @user.bio  %>" type="text" />
+  </div>
+  <div>
+    <label for="pic">Pic</label><br />
+    <input id="pic" name="pic" value="<%= @user.pic  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

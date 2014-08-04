@@ -1,0 +1,45 @@
+<h1>Editing Question #<%= @question.id %></h1>
+
+<form action="/questions/<%= @question.id %>/update">
+  <div>
+    <label for="quiz_id">Quiz_ID</label><br />
+    <input id="quiz_id" name="quiz_id" value="<%= @question.quiz_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="query">Question</label><br />
+    <input id="query" name="query" value="<%= @question.query  %>" type="text" />
+  </div>
+  <div>
+    <label for="correct_answer">Correct Answer</label><br />
+    <input id="correct_answer" name="correct_answer" value="<%= @question.correct_answer  %>" type="text" />
+  </div>
+  <div>
+    <label for="user_answer">user_answer</label><br />
+    <input id="user_answer" name="user_answer" value="<%= @question.user_answer  %>" type="text" />
+  </div>
+  <div>
+    <label for="author">Author</label><br />
+    <input id="author" name="author" value="<%= @question.author  %>" type="text" />
+  </div>
+  <div>
+    <label for="wrong_answer_1">Wrong Answer 1</label><br />
+    <input id="wrong_answer_1" name="wrong_answer_1" value="<%= @question.wrong_answer_1  %>" type="text" />
+  </div>
+  <div>
+    <label for="wrong_answer_2">Wrong Answer 2</label><br />
+    <input id="wrong_answer_2" name="wrong_answer_2" value="<%= @question.wrong_answer_2  %>" type="text" />
+  </div>
+  <div>
+    <label for="wrong_answer_3">Wrong Answer 3</label><br />
+    <input id="wrong_answer_3" name="wrong_answer_3" value="<%= @question.wrong_answer_3  %>" type="text" />
+  </div>
+  <div>
+    <label for="answered">answered</label><br />
+    <input id="answered" name="answered" value="<%= @question.answered  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

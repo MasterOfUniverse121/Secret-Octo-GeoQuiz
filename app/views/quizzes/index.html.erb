@@ -1,0 +1,39 @@
+<h1>Quizzes</h1>
+
+<p><a href="/new_quiz">Add a New Quiz</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chapter number</th>
+      <th>Chapter name</th>
+      <th>Number of questions</th>
+      <th>User</th>
+      <th>Score</th>
+      <th>Number answered</th>
+      <th>Completed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @quizzes.each do |quiz| %>
+    <tr>
+          <td><%= quiz.chapter_number %></td>
+          <td><%= quiz.chapter_name %></td>
+          <td><%= quiz.number_of_questions %></td>
+          <td><%= quiz.user_id %></td>
+          <td><%= quiz.score %></td>
+          <td><%= quiz.number_answered %></td>
+          <td><%= quiz.completed %></td>
+          <td><a href="/quizzes/<%= quiz.id %>">Show</a>
+        </td>
+      <td><a href="/quizzes/<%= quiz.id %>/edit">Edit</a></td>
+      <td><a href="/quizzes/<%= quiz.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
