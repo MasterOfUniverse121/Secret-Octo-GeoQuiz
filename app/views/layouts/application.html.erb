@@ -23,7 +23,7 @@
   <ul class="nav nav-pills nav-justified">
   <li class="active"><a href="/show">Home</a></li>
   <li class="active"><a href="/users">Users</a></li>
-    <li class="active"><a href="/new_quiz">Add a new quiz</a></li>
+    <li class="active"><a href="/new_quiz">Add a New Quiz</a></li>
   <button class="yay"><li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Geometry <span class="caret"></span>
@@ -48,8 +48,8 @@
   <div class="container">
    <div class="hello">
     <% if session['username'] %>
-    You're signed in, <%= session['username'] %>
-    <button><a href="/sessions/destroy">Sign Out</a></button>
+     You're signed in as <%= session['username'] %>
+    <button><a href="/sessions/destroy">Not You?</a></button>
     <% else %>
     <button><a href="/sessions/new">Sign In</a></button>
     <% end %>
