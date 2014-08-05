@@ -11,6 +11,7 @@ class QuizzesController < ApplicationController
   def new
 		@quizzes = Quiz.all
 		@users = User.all
+		@numbers = Quiz::NUMBERS
   end
 
   def create
@@ -24,7 +25,7 @@ class QuizzesController < ApplicationController
     @quiz.completed = params[:completed]
 
     if @quiz.save
-      redirect_to "/quizzes/#{ @quiz.id }"
+			redirect_to "/quizzes/#{ @quiz.id }", :notice  "Quiz saved"
     else
       render 'new'
     end
@@ -34,6 +35,7 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find_by(id: params[:id])
 		@quizzes = Quiz.all
 		@users = User.all
+		@numbers = Quiz::NUMBERS
   end
 
   def update
@@ -47,7 +49,7 @@ class QuizzesController < ApplicationController
     @quiz.completed = params[:completed]
 
     if @quiz.save
-      redirect_to "/quizzes/#{ @quiz.id }"
+      redirect_to "/quizzes/#{ @quiz.id }", :notice  "Quiz saved"
     else
       render 'edit'
     end
