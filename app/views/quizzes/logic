@@ -1,0 +1,21 @@
+<% if @quiz.number_answered == 0 %>
+<button><a href="/questions/1">Start Quiz!</a></button>
+<% elsif @quiz.number_of_questions > @quiz.number_answered > 0 %>
+<div>
+  <strong>Number of questions correct</strong>:<br />
+	<p><%= @quiz.correct_questions %></p>
+</div>
+<div>
+  <strong>Number answered</strong>:<br />
+  <p><%= @quiz.number_answered %></p>
+</div>
+<button><a href="/questions/<%= @quiz.number_of_questions - @quiz.number_answered %>">Continue Quiz</a></button>
+<% elsif @quiz.number_answered == @quiz.number_of_questions %>
+<h3><small> You finished this quiz. </small></h3>
+<%= @quiz.completed? == 'true' %>
+<%= @quiz.score == @quiz.correct_questions / @quiz.number_of_questions x 100 %>
+<div>
+  <strong>Score</strong>:<br />
+  <p><%= @quiz.score %></p>
+</div>
+<% end %>

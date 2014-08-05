@@ -5,7 +5,7 @@
     <label for="quiz_id">Quiz</label><br />
 		<select name = "quiz_id">
 		<% @quizzes.each do |quiz|%>
-			<option value = "<%= quiz.id %>"><%= quiz.name %></option>
+			<option value = "<%= quiz.id %>"><%= quiz.id %></option>
 		<% end %>
 		</select>
   </div>
@@ -17,10 +17,7 @@
     <label for="correct_answer">Correct Answer</label><br />
     <input id="correct_answer" name="correct_answer" type="text" />
   </div>
-  <div>
-    <label for="user_answer">user_answer</label><br />
-    <input id="user_answer" name="user_answer" type="text" />
-  </div>
+
   <div>
     <label for="author">Author</label><br />
     <select name = "author">
@@ -41,10 +38,7 @@
     <label for="wrong_answer_3">Wrong Answer 3</label><br />
     <input id="wrong_answer_3" name="wrong_answer_3" type="text" />
   </div>
-  <div>
-    <label for="answered">answered</label><br />
-    <input id="answered" name="answered" type="text" />
-  </div>
+
    
   <br>
   <div>

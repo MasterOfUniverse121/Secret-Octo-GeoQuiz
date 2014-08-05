@@ -44,23 +44,15 @@
     <label for="number_of_questions">Number of Questions</label><br />
     <input id="number_of_questions" name="number_of_questions" type="text" />
   </div>
-  <div>
-    <label for="user_id">user_id</label><br />
-    <input id="user_id" name="user_id" type="text" />
+	
+	<div>
+    <label for="user_id">User</label><br />
+   <select name = "user_id">
+		 <% @users.each do |user|%>
+			<option value = "<%= user.id %>"><%= user.name %></option>
+		<% end %>
+		</select>
   </div>
-  <div>
-    <label for="score">score</label><br />
-    <input id="score" name="score" type="text" />
-  </div>
-  <div>
-    <label for="number_answered">number_answered</label><br />
-    <input id="number_answered" name="number_answered" type="text" />
-  </div>
-  <div>
-    <label for="completed">completed</label><br />
-    <input id="completed" name="completed" type="text" />
-  </div>
-  
   <br>
   <div>
     <input type="submit">

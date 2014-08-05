@@ -3,7 +3,11 @@
 <form action="/questions/<%= @question.id %>/update">
   <div>
     <label for="quiz_id">Quiz_ID</label><br />
-    <input id="quiz_id" name="quiz_id" value="<%= @question.quiz_id  %>" type="text" />
+    <select name = "quiz_id" value="<%= @question.quiz_id  %>">
+		<% @quizzes.each do |quiz|%>
+			<option value = "<%= quiz.id %>"><%= quiz.id %></option>
+		<% end %>
+		</select>
   </div>
   <div>
     <label for="query">Question</label><br />
@@ -19,7 +23,11 @@
   </div>
   <div>
     <label for="author">Author</label><br />
-    <input id="author" name="author" value="<%= @question.author  %>" type="text" />
+    <select name = "author"  value="<%= @question.author  %>">
+			<% @authors.each do |user|%>
+			<option value = "<%= user.id %>"><%= user.name %></option>
+		<% end %>
+		</select>
   </div>
   <div>
     <label for="wrong_answer_1">Wrong Answer 1</label><br />
@@ -33,10 +41,7 @@
     <label for="wrong_answer_3">Wrong Answer 3</label><br />
     <input id="wrong_answer_3" name="wrong_answer_3" value="<%= @question.wrong_answer_3  %>" type="text" />
   </div>
-  <div>
-    <label for="answered">answered</label><br />
-    <input id="answered" name="answered" value="<%= @question.answered  %>" type="text" />
-  </div>
+
   <br>
   <div>
     <input type="submit">

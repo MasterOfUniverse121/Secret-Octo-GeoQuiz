@@ -1,0 +1,29 @@
+  NEW PAGE
+	<div>
+    <label for="user_answer">user_answer</label><br />
+    <input id="user_answer" name="user_answer" type="text" />
+  </div>
+	<div>
+    <label for="answered">answered</label><br />
+    <input id="answered" name="answered" type="text" />
+  </div>
+	
+	
+	EDIT PAGE
+	 <div>
+    <label for="answered">answered</label><br />
+    <input id="answered" name="answered" value="<%= @question.answered  %>" type="text" />
+  </div>
+	
+	
+	SHOW PAGE
+	<div>
+  <strong>Answered</strong>:<br />
+  <p><%= @question.answered? %></p>
+	</div>
+	<div>
+  <strong>Quiz</strong>:<br />
+  <p><%= @question.quiz_id %></p>
+	</div>
+
+	INDEX PAGE

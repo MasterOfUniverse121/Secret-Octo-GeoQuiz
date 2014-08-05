@@ -1,0 +1,42 @@
+  NEW PAGE
+  <div>
+    <label for="score">score</label><br />
+    <input id="score" name="score" type="text" />
+  </div>
+	
+  <div>
+    <label for="number_answered">number_answered</label><br />
+    <input id="number_answered" name="number_answered" type="text" />
+  </div>
+  <div>
+    <label for="completed">completed</label><br />
+    <input id="completed" name="completed" type="text" />
+  </div>
+	
+	
+	EDIT PAGE
+  <div>
+    <label for="score">score</label><br />
+    <input id="score" name="score" value="<%= @quiz.score  %>" type="text" />
+  </div>
+  <div>
+    <label for="number_answered">number_answered</label><br />
+    <input id="number_answered" name="number_answered" value="<%= @quiz.number_answered  %>" type="text" />
+  </div>
+  <div>
+    <label for="completed">completed</label><br />
+    <input id="completed" name="completed" value="<%= @quiz.completed  %>" type="text" />
+  </div>
+	
+	
+	SHOW PAGE
+	<div>
+<strong>Completed</strong>:<br />
+  <p><%= @quiz.completed? %></p>
+</div>
+	
+	
+	INDEX PAGE
+	
+	
+	

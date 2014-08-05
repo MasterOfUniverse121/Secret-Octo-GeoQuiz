@@ -1,41 +1,17 @@
 <h1>Quiz #<%= @quiz.id %></h1>
 
 <div>
-  <strong><%= @quiz.chapter_number %>:   <strong><%= @quiz.chapter_number %>: </strong>
-</strong>
+<strong><%= @quiz.chapter_number %>: <%= @quiz.chapter_name %></strong>
 </div>
-<div>
-  <strong>Number of questions correct</strong>:<br />
-	<p><%= @quiz.correct_questions %></p>
-</div>
+
 <div>
   <strong>Number of questions</strong>:<br />
   <p><%= @quiz.number_of_questions %></p>
 </div>
 <div>
   <strong>User</strong>:<br />
-  <p><%= @quiz.user_id %></p>
+	<p><%= @quiz.user.name %></p>
 </div>
-<div>
-  <strong>Score</strong>:<br />
-  <p><%= @quiz.score %></p>
-</div>
-<div>
-  <strong>Number answered</strong>:<br />
-  <p><%= @quiz.number_answered %></p>
-</div>
-<div>
-  <strong>Completed</strong>:<br />
-  <p><%= @quiz.completed? %></p>
-</div>
-<% if @quiz.number_answered == 0 %>
-<button><a href="/questions/1">Start Quiz!</a></button>
-<% elsif @quiz.number_of_questions > @quiz.number_answered > 0 %>
-<button><a href="/questions/<%= @quiz.number_of_questions - @quiz.number_answered %>"></a></button>
-<% elsif @quiz.number_answered == @quiz.number_of_questions %>
-<h3><small> You finished this quiz. </small></h3>
-<%= @quiz.completed? == 'true' %>
-<%= @quiz.score == @quiz.correct_questions / @quiz.number_of_questions x 100 %>
-<% end %>
+
 <button><a href="/quizzes/<%= @quiz.id %>/edit">Edit</a></button>&nbsp
 <button><a href="/quizzes/<%= @quiz.id %>/destroy">Destroy</a></button>

@@ -1,0 +1,7 @@
+<% if @question.user_answer ==  @question.correct_answer %>
+<h3>CORRECT!</h3>
+<%= @question.answered? = 'true'%>
+<% elsif @question.user_answer != @question.correct_answer %>
+  <p>Sorry, that's incorrect. Your answer was <%= @question.user_answer %>. The correct answer is <%= @question.correct_answer %>. Better luck next time! </p>
+<%= @question.answered? = 'true'%>
+<% end %>
