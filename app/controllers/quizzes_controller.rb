@@ -12,6 +12,7 @@ class QuizzesController < ApplicationController
 		@quizzes = Quiz.all
 		@users = User.all
 		@numbers = Quiz::NUMBERS
+		@titlestuffs = Quiz::TITLESTUFFS
   end
 
   def create
@@ -25,9 +26,9 @@ class QuizzesController < ApplicationController
     @quiz.completed = params[:completed]
 
     if @quiz.save
-			redirect_to "/quizzes/#{ @quiz.id }", :notice  "Quiz saved"
+			redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"
     else
-      render 'new'
+      render 'new', :notice => @quiz.errors.full_messages.join(' ')
     end
   end
 
@@ -36,6 +37,7 @@ class QuizzesController < ApplicationController
 		@quizzes = Quiz.all
 		@users = User.all
 		@numbers = Quiz::NUMBERS
+		@titlestuffs = Quiz::TITLESTUFFS
   end
 
   def update
@@ -49,9 +51,9 @@ class QuizzesController < ApplicationController
     @quiz.completed = params[:completed]
 
     if @quiz.save
-      redirect_to "/quizzes/#{ @quiz.id }", :notice  "Quiz saved"
+      redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"
     else
-      render 'edit'
+			render 'edit', :notice => @quiz.errors.full_messages.join(' ')
     end
   end
 

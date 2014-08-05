@@ -6,39 +6,19 @@
 <form action="/create_quiz">
   <div>
     <label for="chapter_number">Chapter Number</label><br />
-<select>
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-	<option>6</option>
-	<option>7</option>
-	<option>8</option>
-	<option>9</option>
-	<option>10</option>
-	<option>11</option>
-	<option>12</option>
-	<option>13</option>
-</select>
+    <select name="number">
+			<% @numbers.each do |n| %>
+      <option value="<%= n %>"><%= n %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     <label for="chapter_name">Chapter Name</label><br />
-		<select>
-  <option>Introduction to Geometry</option>
-	<option>Basic Concepts and Proofs</option>
-	<option>Congruent Triangles</option>
-	<option>Lines in the Plane</option>
-	<option>Parallel Lines and Related Figures</option>
-	<option>Lines and Planes in Space</option>
-	<option>Polygons</option>
-	<option>Similar Polygons</option>
-	<option>The Pythagorean Theorem</option>
-	<option>Circles</option>
-	<option>Area</option>
-	<option>Surface Area and Volume</option>
-	<option>Coordinate Geometry Extended</option>
-		</select>
+		  <select name="titlestuff">
+				<% @titlestuffs.each do |nam| %>
+      <option value="<%= nam %>"><%= nam %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     <label for="number_of_questions">Number of Questions</label><br />

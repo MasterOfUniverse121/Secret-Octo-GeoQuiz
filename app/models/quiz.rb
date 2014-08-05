@@ -4,9 +4,9 @@ class Quiz < ActiveRecord::Base
 		
 	NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13']
 	validates_inclusion_of :number,
-	:in => NUMBERS
+	:in => NUMBERS,
 	:message => "%{value} is not allowed."
-	NAMES = ['Introduction to Geometry' ,
+	TITLESTUFFS = ['Introduction to Geometry' ,
 	'Basic Concepts and Proofs' ,
 	'Congruent Triangles' ,
 	'Lines in the Plane' ,
@@ -20,7 +20,7 @@ class Quiz < ActiveRecord::Base
 	'Surface Area and Volume' ,
 	'Coordinate Geometry Extended']
 	validates_inclusion_of :name,
-	:in => NAMES
+	:in => TITLESTUFFS,
 	:message => "%{value} is not allowed."
 	validates_presence_of :number_of_questions,
 	:message => "Number of Questions cannot be empty."

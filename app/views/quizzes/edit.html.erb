@@ -3,11 +3,19 @@
 <form action="/quizzes/<%= @quiz.id %>/update">
   <div>
     <label for="chapter_number">Chapter Number</label><br />
-    <input id="chapter_number" name="chapter_number" value="<%= @quiz.chapter_number  %>" type="text" />
+    <select name="number">
+			<% @numbers.each do |n| %>
+      <option value="<%= n %>"><%= n %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     <label for="chapter_name">Chapter Name</label><br />
-    <input id="chapter_name" name="chapter_name" value="<%= @quiz.chapter_name  %>" type="text" />
+    <select name="name">
+				<% @names.each do |nam| %>
+      <option value="<%= nam %>"><%= nam %></option>
+      <% end %>
+    </select>
   </div>
   <div>
     <label for="number_of_questions">Number of Questions</label><br />
