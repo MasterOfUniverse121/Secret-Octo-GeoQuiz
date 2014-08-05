@@ -2,8 +2,12 @@
 
 <form action="/create_question">
   <div>
-    <label for="quiz_id">Quiz_ID</label><br />
-    <input id="quiz_id" name="quiz_id" type="text" />
+    <label for="quiz_id">Quiz</label><br />
+		<select name = "quiz_id">
+		<% @quizzes.each do |quiz|%>
+			<option value = "<%= quiz.id %>"><%= quiz.name %></option>
+		<% end %>
+		</select>
   </div>
   <div>
     <label for="query">Question</label><br />
@@ -19,7 +23,11 @@
   </div>
   <div>
     <label for="author">Author</label><br />
-    <input id="author" name="author" type="text" />
+    <select name = "author">
+			<% @authors.each do |user|%>
+			<option value = "<%= user.id %>"><%= user.name %></option>
+		<% end %>
+		</select>
   </div>
   <div>
     <label for="wrong_answer_1">Wrong Answer 1</label><br />

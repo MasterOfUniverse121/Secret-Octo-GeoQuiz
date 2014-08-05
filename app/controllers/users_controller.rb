@@ -17,6 +17,8 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.bio = params[:bio]
     @user.pic = params[:pic]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
       redirect_to "/users/#{ @user.id }"
@@ -35,6 +37,8 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.bio = params[:bio]
     @user.pic = params[:pic]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
       redirect_to "/users/#{ @user.id }"

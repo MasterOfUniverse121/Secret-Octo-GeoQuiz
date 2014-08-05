@@ -17,9 +17,17 @@
     <label for="pic">Pic</label><br />
     <input id="pic" name="pic" value="<%= @user.pic  %>" type="text" />
   </div>
+    <div>
+    <label for="password">Password</label><br />
+    <input id="password" name="password" type="password" />
+  </div>
+  <div>
+    <label for="password_confirmation">Password Confirmation</label><br />
+    <input id="password_confirmation" name="password_confirmation" type="password" />
+  </div>
   <br>
   <div>
-    <input type="submit">
+    <input type="submit" value = "Update User!">
   </div>
 </form>
 

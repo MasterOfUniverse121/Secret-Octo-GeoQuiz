@@ -9,6 +9,7 @@ class QuizzesController < ApplicationController
   end
 
   def new
+		@quizzes = Quiz.all
   end
 
   def create
@@ -30,6 +31,7 @@ class QuizzesController < ApplicationController
 
   def edit
     @quiz = Quiz.find_by(id: params[:id])
+		@quizzes = Quiz.all
   end
 
   def update

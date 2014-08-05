@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get '/sessions/new' => 'sessions#new'
   get '/sessions/create' => 'sessions#create'
   get '/sessions/destroy' => 'sessions#destroy'
+  get '/sessions/wrong' => 'sessions#wrong'
+  get '/sessions/out' =>'sessions#out'
   get '/show' => 'application#show'
   get '/donate' => 'application#donate'
   # Routes for the Question resource:

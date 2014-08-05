@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   end
 
   def new
+		@quizzes = Quiz.all
+		@authors = User.all
   end
 
   def create
@@ -24,7 +26,7 @@ class QuestionsController < ApplicationController
     @question.answered = params[:answered]
 
     if @question.save
-      redirect_to "/questions/#{ @question.id }"
+			redirect_to "/show"
     else
       render 'new'
     end
@@ -32,6 +34,8 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find_by(id: params[:id])
+		@quizzes = Quiz.all
+		@authors = User.all
   end
 
   def update
