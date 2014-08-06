@@ -6,16 +6,16 @@
 <form action="/create_quiz">
   <div>
     <label for="chapter_number">Chapter Number</label><br />
-    <select name="number">
-			<% @numbers.each do |n| %>
-      <option value="<%= n %>"><%= n %></option>
+    <select name="chapter_number">
+			<% @chapter_count.times do |n| %>
+      <option value="<%= n+1 %>"><%= n+1 %></option>
       <% end %>
     </select>
   </div>
   <div>
     <label for="chapter_name">Chapter Name</label><br />
-		  <select name="titlestuff">
-				<% @titlestuffs.each do |nam| %>
+		  <select name="chapter_name">
+				<% @chapter_name.each do |nam| %>
       <option value="<%= nam %>"><%= nam %></option>
       <% end %>
     </select>

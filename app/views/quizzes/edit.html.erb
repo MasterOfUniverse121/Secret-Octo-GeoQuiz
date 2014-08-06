@@ -4,15 +4,15 @@
   <div>
     <label for="chapter_number">Chapter Number</label><br />
     <select name="number">
-			<% @numbers.each do |n| %>
-      <option value="<%= n %>"><%= n %></option>
+			<% @chapter_count.times do |n| %>
+      <option value="<%= n+1 %>"><%= n+1 %></option>
       <% end %>
     </select>
   </div>
   <div>
     <label for="chapter_name">Chapter Name</label><br />
     <select name="name">
-				<% @names.each do |nam| %>
+			<% @chapter_name.each do |nam| %>
       <option value="<%= nam %>"><%= nam %></option>
       <% end %>
     </select>

@@ -2,6 +2,9 @@ class QuizzesController < ApplicationController
 
   def index
     @quizzes = Quiz.all
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def show
@@ -11,8 +14,11 @@ class QuizzesController < ApplicationController
   def new
 		@quizzes = Quiz.all
 		@users = User.all
-		@numbers = Quiz::NUMBERS
-		@titlestuffs = Quiz::TITLESTUFFS
+		@chapter_count = Quiz::CHAPTER_COUNT
+		@chapter_name = Quiz::CHAPTER_NAMES
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def create
@@ -28,7 +34,7 @@ class QuizzesController < ApplicationController
     if @quiz.save
 			redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"
     else
-      render 'new', :notice => @quiz.errors.full_messages.join(' ')
+      redirect_to '/new_quiz', :notice => @quiz.errors.full_messages.join(' ')
     end
   end
 
@@ -36,14 +42,17 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find_by(id: params[:id])
 		@quizzes = Quiz.all
 		@users = User.all
-		@numbers = Quiz::NUMBERS
-		@titlestuffs = Quiz::TITLESTUFFS
+		@chapter_count = Quiz::CHAPTER_COUNT
+		@chapter_name = Quiz::CHAPTER_NAMES
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+				end
   end
 
   def update
     @quiz = Quiz.find_by(id: params[:id])
-    @quiz.chapter_number = params[:chapter_number]
-    @quiz.chapter_name = params[:chapter_name]
+		@quiz.chapter_number = params[:number]
+		@quiz.chapter_name = params[:name]
     @quiz.number_of_questions = params[:number_of_questions]
     @quiz.user_id = params[:user_id]
     @quiz.score = params[:score]
@@ -60,8 +69,9 @@ class QuizzesController < ApplicationController
   def destroy
     @quiz = Quiz.find_by(id: params[:id])
     @quiz.destroy
-
-
-    redirect_to "/quizzes"
+		redirect_to "/", :notice => "Quiz deleted."
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+				end
   end
 end

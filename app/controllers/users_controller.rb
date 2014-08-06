@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-
+	
   def index
     @users = User.all
   end
 
   def show
     @user = User.find_by(id: params[:id])
+		@quizzes = Quiz.all
   end
 
   def new
@@ -29,6 +30,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(id: params[:id])
+		if @user.id != session['uid']
+			redirect_to "/users", :notice => "Deal with it."
+		end
   end
 
   def update
@@ -48,10 +52,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
-    @user.destroy
-
-
-    redirect_to "/users"
-  end
+		User.find_by(id: params[:id]).destroy
+		reset_session
+		redirect_to'/sessions/out', :notice => "User deleted."
+		if @user.id != session['uid']
+			redirect_to "/users", :notice => "Deal with it."
+  	end
+	end
 end

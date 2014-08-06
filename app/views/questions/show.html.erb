@@ -1,5 +1,3 @@
-<h1>Question #<%= @question.id %></h1>
-
 
 <div>
   <strong>Question</strong>:<br />
@@ -11,12 +9,27 @@
   <p><%= @question.author %></p>
 </div>
 <form>
-  <input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_1 %><br>
+	<?php
+  shuffle(<input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_1 %><br>
   <input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_2 %><br>
 	<input type="radio" name="answer" value="right"> <%= @question.correct_answer %><br>
-	<input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_3 %><br>
+	<input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_3 %><br>)
+?>
 	<input type="submit">
 </form>
-
+<% if @question.user_answer ==  @question.correct_answer %>
+<h3>CORRECT!</h3>
+<%= @question.answered? = 'true'%>
+<% elsif @question.user_answer != @question.correct_answer %>
+  <p>Sorry, that's incorrect. Your answer was <%= @question.user_answer %>. The correct answer is <%= @question.correct_answer %>. Better luck next time! </p>
+<%= @question.answered? = 'true'%>
+<% end %>
+<% if @question.answered? = 'true'%>
+<button><a href = "/questions/<%= @question.id %> + 1">Next</a></button>
+<% end %>
+<% if @question.id = '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65'%>
+<button><a href = "/quizzes/<%= @question.quiz_id %>">Done</a></button>
+<%= @quiz.completed? == 'true' %>
+<% end %>
 <button><a href="/questions/<%= @question.id %>/edit">Edit</a></button>&nbsp
 <button><a href="/questions/<%= @question.id %>/destroy">Destroy</a></button>

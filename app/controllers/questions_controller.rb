@@ -2,6 +2,9 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def show
@@ -11,6 +14,9 @@ class QuestionsController < ApplicationController
   def new
 		@quizzes = Quiz.all
 		@authors = User.all
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def create
@@ -36,6 +42,9 @@ class QuestionsController < ApplicationController
     @question = Question.find_by(id: params[:id])
 		@quizzes = Quiz.all
 		@authors = User.all
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def update
@@ -60,8 +69,9 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find_by(id: params[:id])
     @question.destroy
-
-
-    redirect_to "/questions"
+		redirect_to "/", :notice => "Question deleted."
+		if session['username'] != 'Tobe'
+			redirect_to "/", :notice => "Deal with it."
+		end
   end
 end

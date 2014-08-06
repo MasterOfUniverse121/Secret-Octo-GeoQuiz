@@ -2,11 +2,11 @@ class Quiz < ActiveRecord::Base
 	has_many :questions
 	belongs_to :user
 		
-	NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13']
-	validates_inclusion_of :number,
-	:in => NUMBERS,
-	:message => "%{value} is not allowed."
-	TITLESTUFFS = ['Introduction to Geometry' ,
+	#	validate :chapter_number is lessthan or equal to CHAPTER_COUNT
+	
+	CHAPTER_COUNT = 13
+	
+	CHAPTER_NAMES = ['Introduction to Geometry' ,
 	'Basic Concepts and Proofs' ,
 	'Congruent Triangles' ,
 	'Lines in the Plane' ,
@@ -19,8 +19,8 @@ class Quiz < ActiveRecord::Base
 	'Area' ,
 	'Surface Area and Volume' ,
 	'Coordinate Geometry Extended']
-	validates_inclusion_of :name,
-	:in => TITLESTUFFS,
+	validates_inclusion_of :chapter_name,
+	:in => CHAPTER_NAMES,
 	:message => "%{value} is not allowed."
 	validates_presence_of :number_of_questions,
 	:message => "Number of Questions cannot be empty."

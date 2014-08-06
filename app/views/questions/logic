@@ -5,3 +5,10 @@
   <p>Sorry, that's incorrect. Your answer was <%= @question.user_answer %>. The correct answer is <%= @question.correct_answer %>. Better luck next time! </p>
 <%= @question.answered? = 'true'%>
 <% end %>
+<% if @question.answered? = 'true'%>
+<button><a href = "/questions/<%= @question.id %> + 1">Next</a></button>
+<% end %>
+<% if @question.id = '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65'%>
+<button><a href = "/quizzes/<%= @question.quiz_id %>">Done</a></button>
+<%= @quiz.completed? == 'true' %>
+<% end %>

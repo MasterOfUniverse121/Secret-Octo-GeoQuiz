@@ -1,4 +1,4 @@
-<h1>Quiz #<%= @quiz.id %></h1>
+<h1>GEOMETRY QUIZ</h1>
 
 <div>
 <strong>Chapter <%= @quiz.chapter_number %>: <%= @quiz.chapter_name %></strong>
@@ -12,6 +12,53 @@
   <strong>User</strong>:<br />
 	<p><%= @quiz.user.name %></p>
 </div>
-
+<% if @quiz.number_answered == 0 %>
+	<% if @quiz.id = 3 %>
+<button><a href="/questions/1">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 4 %>
+<button><a href="/questions/6">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 7 %>
+<button><a href="/questions/11">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 8 %>
+<button><a href="/questions/16">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 9 %>
+<button><a href="/questions/21">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 10 %>
+<button><a href="/questions/26">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 11 %>
+<button><a href="/questions/31">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 12 %>
+<button><a href="/questions/36">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 13 %>
+<button><a href="/questions/41">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 14 %>
+<button><a href="/questions/46">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 15 %>
+<button><a href="/questions/51">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 16 %>
+<button><a href="/questions/56">Start Quiz!</a></button>
+	<% end %>
+	<% if @quiz.id = 17 %>
+<button><a href="/questions/61">Start Quiz!</a></button>
+	<% end %>
+<% end %>
+<% if @quiz.number_answered == @quiz.number_of_questions %>
+<h3><small> You finished this quiz. </small></h3>
+<div>
+  <strong>Score</strong>:<br />
+  <p><%= @quiz.score %></p>
+</div>
+<% end %>
 <button><a href="/quizzes/<%= @quiz.id %>/edit">Edit</a></button>&nbsp
 <button><a href="/quizzes/<%= @quiz.id %>/destroy">Destroy</a></button>

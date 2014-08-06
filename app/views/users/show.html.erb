@@ -14,7 +14,15 @@
 </div>
 <div class="hello">
   <strong>Pic</strong>:<br />
-  <p><img src="<%= @user.pic %>" alt="Pic" height="200px" width="200px"></p>
+  <p><img src="<%= @user.pic %>" alt="Pic" height="200px"></p>
+</div>
+<div class="hello">
+	<strong>Quizzes</strong>:<br />
+<% @quizzes.each do |quiz|%>
+<% if quiz.completed = 'true' %>
+	<p><%= quiz.chapter_name %></p>
+<% end %>
+<% end %>
 </div>
 <% if session['username'] == @user.name %>
 <div class="hello">
