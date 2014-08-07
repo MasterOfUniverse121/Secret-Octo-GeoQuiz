@@ -2,9 +2,10 @@
 <div class="hello">
   <strong>Question</strong>:<br />
   <p><%= @question.query %></p>
+
 </div>
 
-<form>
+<form action="/questions/<%= @question.id %>/grade">
 	<input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_1 %><br>
   <input type="radio" name="answer" value="wrong"> <%= @question.wrong_answer_2 %><br>
 	<input type="radio" name="answer" value="right"> <%= @question.correct_answer %><br>
@@ -12,6 +13,7 @@
 	<br>
 	<input type="submit">
 </form>
+
 <br>
 <% if @question.user_answer ==  @question.correct_answer %>
 <h3>CORRECT!</h3>
@@ -21,16 +23,16 @@
 <% if @question.answered? == 'true' %>
 <button><a href = "/questions/<%= @question.id %> + 1">Next</a></button>
 <% end %>
-
-<% if @question.id = ['fivos'] %>
+<% if @question.id == ['fivos']%>
 <div class="hello">
 <button><a href = "/quizzes/<%= @question.quiz_id %>">Done</a></button>
 </div>
 <% end %>
 <br>
+
 <% if session['username'] == 'Tobe' %>
 <div class="hello">
-<button class="hooray"><a href="/questions/<%= @question.id %>/edit">Edit</a></button>&nbsp
-<button class="hooray"><a href="/questions/<%= @question.id %>/destroy">Destroy</a></button>
+	<button class="hooray"><a href="/questions/<%= @question.id %>/edit">Edit</a></button>&nbsp
+	<button class="hooray"><a href="/questions/<%= @question.id %>/destroy">Destroy</a></button>
 </div>
 <% end %>

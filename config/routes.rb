@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get '/questions/:id/destroy' => 'questions#destroy'
+	# GRADE
+	get '/questions/:id/grade' => 'questions#grade'
   #------------------------------
 
   # Routes for the Quiz resource:

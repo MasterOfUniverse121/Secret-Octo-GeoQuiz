@@ -9,8 +9,9 @@ class QuizzesController < ApplicationController
 
   def show
     @quiz = Quiz.find_by(id: params[:id])
-		if @quiz.number_answered == @quiz.number_of_questions
-			@quiz.completed? == 'true'
+# 		if @quiz.number_answered == @quiz.number_of_questions
+# 			@quiz.completed? == 'true'
+# 			@quiz.score == @quiz.number_correct / @quiz.number_of_questions
   end
 
   def new

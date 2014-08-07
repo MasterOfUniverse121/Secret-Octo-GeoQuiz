@@ -9,13 +9,12 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
-		@quiz = Quiz.find_by(id: params[:id])
-		if @question.user_answer ==  @question.correct_answer
-		@question.answered? == 'true'
-		end
-		elsif @question.user_answer != @question.correct_answer
-		@question.answered? == 'true'
-		end
+# 		@quiz = Quiz.find_by(id: params[:id])
+# 		if @question.user_answer ==  @question.correct_answer
+# 		@question.answered? == 'true'
+# 		elsif @question.user_answer != @question.correct_answer
+# 		@question.answered? == 'true'
+# 		end
   end
 
   def new
@@ -81,4 +80,14 @@ class QuestionsController < ApplicationController
 			redirect_to "/", :notice => "Deal with it."
 		end
   end
+	
+	def grade
+			@quiz = Quiz.find_by(id: params[:id])
+		  @question = Question.find_by(id: params[:id])
+		if @question.user_answer == @question.correct_answer
+			@quiz.correct_questions + 1
+		elsif @question.user_answer != @question.correct_answer
+			@quiz.correct_questions + 0
+		end
+	end
 end
