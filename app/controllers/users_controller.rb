@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to "/users/#{ @user.id }", :notice => "User saved"
     else
-			redirect_to '/new', :notice => @user.errors.full_messages.join(' ')
+			redirect_to '/new_user', :notice => @user.errors.full_messages.join(' ')
     end
   end
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     if @user.save
 			redirect_to "/users/#{ @user.id }", :notice => "User saved"
     else
-			redirect_to'/edit', :notice => @user.errors.full_messages.join(' ')
+			redirect_to "/users/#{ @user.id }/edit", :notice => @user.errors.full_messages.join(' ')
     end
   end
 

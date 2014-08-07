@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
     if @question.save
 			redirect_to "/show", :notice => "Question saved"
     else
-			redirect_to 'new', :notice => @question.errors.full_messages.join(' ')
+			redirect_to '/new_question', :notice => @question.errors.full_messages.join(' ')
     end
   end
 
@@ -63,7 +63,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to "/show", :notice => "Question saved"
     else
-			redirect_to 'edit', :notice => @question.errors.full_messages.join(' ')
+			redirect_to "/questions/#{ @question.id }/edit", :notice => @question.errors.full_messages.join(' ')
     end
   end
 

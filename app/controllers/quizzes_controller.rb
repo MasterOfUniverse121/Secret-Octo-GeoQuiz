@@ -62,7 +62,7 @@ class QuizzesController < ApplicationController
     if @quiz.save
       redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"
     else
-			render 'edit', :notice => @quiz.errors.full_messages.join(' ')
+			redirect_to "/quizzes/#{ @quiz.id }/edit", :notice => @quiz.errors.full_messages.join(' ')
     end
   end
 
