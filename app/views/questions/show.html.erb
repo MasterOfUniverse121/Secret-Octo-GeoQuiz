@@ -32,7 +32,7 @@
 <br>
 <% if session['username'] == 'Tobe' %>
 <div class="hello">
-<button><a href="/questions/<%= @question.id %>/edit">Edit</a></button>&nbsp
+<button><a href="/questions/<% @question.id %>/edit">Edit</a></button>&nbsp
 <button><a href="/questions/<%= @question.id %>/destroy">Destroy</a></button>
 </div>
 <% end %>

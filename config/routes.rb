@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/sessions/out' =>'sessions#out'
   get '/show' => 'application#show'
   get '/donate' => 'application#donate'
+	get '/trolls' => 'application#troll'
   # Routes for the Question resource:
   # CREATE
   get '/new_question' => 'questions#new'
@@ -56,5 +57,5 @@ Rails.application.routes.draw do
   # DELETE
   get '/users/:id/destroy' => 'users#destroy'
   #------------------------------
-root :to => 'application#show'
+root :to => 'application#troll'
 end
