@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+       ruby '2.1.1'  
 gem 'starter_generators', :git => 'https://github.com/arjunvenkat/starter_generators.git'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
