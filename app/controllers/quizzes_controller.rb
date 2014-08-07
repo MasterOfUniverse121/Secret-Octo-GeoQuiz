@@ -72,6 +72,6 @@ class QuizzesController < ApplicationController
 		redirect_to "/", :notice => "Quiz deleted."
 		if session['username'] != 'Tobe'
 			redirect_to "/", :notice => "Deal with it."
-				end
+		end
   end
 end

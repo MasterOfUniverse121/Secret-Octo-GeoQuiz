@@ -22,15 +22,15 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
-      redirect_to "/users/#{ @user.id }"
+      redirect_to "/users/#{ @user.id }", :notice => "User saved"
     else
-      render 'new'
+			redirect_to '/new', :notice => @user.errors.full_messages.join(' ')
     end
   end
 
   def edit
     @user = User.find_by(id: params[:id])
-		if @user.id != session['uid']
+		if @user.name != session['username']
 			redirect_to "/users", :notice => "Deal with it."
 		end
   end
@@ -45,18 +45,21 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
-      redirect_to "/users/#{ @user.id }"
+			redirect_to "/users/#{ @user.id }", :notice => "User saved"
     else
-      render 'edit'
+			redirect_to'/edit', :notice => @user.errors.full_messages.join(' ')
     end
   end
 
-  def destroy
-		User.find_by(id: params[:id]).destroy
+
+	def destroy
+	   @user = User.find_by(id: params[:id])
+		if @user.name != session['username']
+			redirect_to "/users", :notice => "Deal with it."
+		else
+		@user.destroy
 		reset_session
 		redirect_to'/sessions/out', :notice => "User deleted."
-		if @user.id != session['uid']
-			redirect_to "/users", :notice => "Deal with it."
-  	end
+		end
 	end
 end

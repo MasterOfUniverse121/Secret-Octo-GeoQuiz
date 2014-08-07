@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
+		@quiz = Quiz.find_by(id: params[:id])
   end
 
   def new
@@ -32,9 +33,9 @@ class QuestionsController < ApplicationController
     @question.answered = params[:answered]
 
     if @question.save
-			redirect_to "/show"
+			redirect_to "/show", :notice => "Question saved"
     else
-      render 'new'
+			redirect_to 'new', :notice => @question.errors.full_messages.join(' ')
     end
   end
 
@@ -60,9 +61,9 @@ class QuestionsController < ApplicationController
     @question.answered = params[:answered]
 
     if @question.save
-      redirect_to "/questions/#{ @question.id }"
+      redirect_to "/show", :notice => "Question saved"
     else
-      render 'edit'
+			redirect_to 'edit', :notice => @question.errors.full_messages.join(' ')
     end
   end
 

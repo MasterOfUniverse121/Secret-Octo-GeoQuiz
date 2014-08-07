@@ -25,8 +25,8 @@
 		<br>
 		<% if session['username'] == 'Seal' %>
 		<div class="hello">
-			<img src="http://media.giphy.com/media/ze1dOnguUQNDG/giphy.gif" alt="dealwithit" height="150px">
-						<img src="http://media.giphy.com/media/mYbsoApPfp0cg/giphy.gif" alt="dealwithit" height="150px">
+			<img src = "http://media.giphy.com/media/ze1dOnguUQNDG/giphy.gif" alt = "dealwithit" height="150px">
+			<img src = "http://media.giphy.com/media/mYbsoApPfp0cg/giphy.gif" alt = "dealwithit" height="150px">
 			<br>
 			<b>HEY SEAL YA GOTTA DEAL WITH IT!</b>
 		<% end %>
@@ -36,22 +36,21 @@
       Geometry Quizzes <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/1">Chapter 1: Introduction to Geometry</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/2">Chapter 2: Basic Concepts and Proofs</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/3">Chapter 3: Congruent Triangles</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/4">Chapter 4: Lines in the Plane</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/5">Chapter 5: Parallel Lines and Related Figures</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/6">Chapter 6: Lines and Planes in Space</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/7">Chapter 7: Polygons</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/8">Chapter 8: Similar Polygons</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/9">Chapter 9: The Pythagorean Theorem</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/10">Chapter 10: Circles</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/11">Chapter 11: Area</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/12">Chapter 12: Surface Area and Volume</a></li>
-      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/13">Chapter 13: Coordinate Geomtery Extended</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/3">Chapter 1: Introduction to Geometry</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/4">Chapter 2: Basic Concepts and Proofs</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/5">Chapter 3: Congruent Triangles</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/6">Chapter 4: Lines in the Plane</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/7">Chapter 5: Parallel Lines and Related Figures</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/8">Chapter 6: Lines and Planes in Space</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/9">Chapter 7: Polygons</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/10">Chapter 8: Similar Polygons</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/11">Chapter 9: The Pythagorean Theorem</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/12">Chapter 10: Circles</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/13">Chapter 11: Area</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/14">Chapter 12: Surface Area and Volume</a></li>
+      <li><a href="http://formidable-casterly-rock-91-130975.use1-2.nitrousbox.com/quizzes/15">Chapter 13: Coordinate Geomtery Extended</a></li>
     </ul>
     </li></button>
-</ul>
   <div class="container">
    <div class="hello">
      <h3><small>You're signed in as <%= session['username'] %>. Welcome to GeoQuiz, <%= session['username'] %>! &nbsp</small></h3>
@@ -76,9 +75,13 @@
     <br>
     <br>
 <div class="container">
-  <div id="HCB_comment_box" class="pine"><a href="http://www.htmlcommentbox.com">Comments</a> are loading... Please wait...</div>
+ <div class="hello">
+<!-- begin htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
  <link rel="stylesheet" type="text/css" href="//www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
- <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=16862&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24ZE8Y.b9axlc%2F8jeE.Evkp%2F"+"&opts=16862&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end htmlcommentbox.com -->
+	</div>
   </div>
 <div class = "container">
   <div class = "row">
