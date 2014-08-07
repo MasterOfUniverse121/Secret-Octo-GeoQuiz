@@ -10,6 +10,12 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find_by(id: params[:id])
 		@quiz = Quiz.find_by(id: params[:id])
+		if @question.user_answer ==  @question.correct_answer
+		@question.answered? == 'true'
+		end
+		elsif @question.user_answer != @question.correct_answer
+		@question.answered? == 'true'
+		end
   end
 
   def new

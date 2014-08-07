@@ -14,6 +14,10 @@
     <label for="answered">answered</label><br />
     <input id="answered" name="answered" value="<%= @question.answered  %>" type="text" />
   </div>
+	  <div>
+    <label for="user_answer">user_answer</label><br />
+    <input id="user_answer" name="user_answer" value="<%= @question.user_answer  %>" type="text" />
+  </div>
 	
 	
 	SHOW PAGE
