@@ -12,7 +12,7 @@
   <strong>User</strong>:<br />
 	<p><%= @quiz.user.name %></p>
 </div>
-<% if @quiz.number_answered == nil %>
+<% if @quiz.number_answered == 0 %>
 <% if @quiz.id = 3 %>
 <button><a href="/questions/1">Start Quiz!</a></button>
 <% elsif @quiz.id = 4 %>
