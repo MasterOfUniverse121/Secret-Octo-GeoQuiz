@@ -9,9 +9,9 @@ class QuizzesController < ApplicationController
 
   def show
     @quiz = Quiz.find_by(id: params[:id])
-# 		if @quiz.number_answered == @quiz.number_of_questions
-# 			@quiz.completed? == 'true'
-# 			@quiz.score == @quiz.number_correct / @quiz.number_of_questions
+if session['username'] == nil
+	redirect_to "/", :notice => "Deal with it."
+end
   end
 
   def new
@@ -31,8 +31,9 @@ class QuizzesController < ApplicationController
     @quiz.number_of_questions = params[:number_of_questions]
     @quiz.user_id = params[:user_id]
     @quiz.score = params[:score]
-    @quiz.number_answered = params[:number_answered]
+    @quiz.number_answered == 0
     @quiz.completed = params[:completed]
+		@quiz.correct_questions == 0
 
     if @quiz.save
 			redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"
@@ -59,8 +60,9 @@ class QuizzesController < ApplicationController
     @quiz.number_of_questions = params[:number_of_questions]
     @quiz.user_id = params[:user_id]
     @quiz.score = params[:score]
-    @quiz.number_answered = params[:number_answered]
+    @quiz.number_answered == 0
     @quiz.completed = params[:completed]
+		@quiz.correct_questions == 0
 
     if @quiz.save
       redirect_to "/quizzes/#{ @quiz.id }", :notice => "Quiz saved"

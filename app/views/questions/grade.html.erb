@@ -1,0 +1,6 @@
+<% if params['answer'] ==  'right' %>
+<h3>CORRECT!</h3>
+<% elsif @question.user_answer != 'right' %>
+<p>Sorry, that's incorrect. Your answer was <%= params['answer'] %>. The correct answer is "<%= @question.correct_answer %>". Better luck next time! </p>
+<% end %>
+<button class="hooray"><a href = "/questions/<%= @question.id %>">Next</a></button>

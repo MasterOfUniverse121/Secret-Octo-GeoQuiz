@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 
+
   def index
     @questions = Question.all
 		if session['username'] != 'Tobe'
@@ -9,12 +10,9 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
-# 		@quiz = Quiz.find_by(id: params[:id])
-# 		if @question.user_answer ==  @question.correct_answer
-# 		@question.answered? == 'true'
-# 		elsif @question.user_answer != @question.correct_answer
-# 		@question.answered? == 'true'
-# 		end
+		if session['username'] == nil
+	redirect_to "/", :notice => "Deal with it."
+		end
   end
 
   def new
@@ -82,12 +80,25 @@ class QuestionsController < ApplicationController
   end
 	
 	def grade
-			@quiz = Quiz.find_by(id: params[:id])
 		  @question = Question.find_by(id: params[:id])
-		if @question.user_answer == @question.correct_answer
+		@quiz = @question.quiz
+		if params['answer'] == @question.correct_answer
 			@quiz.correct_questions + 1
-		elsif @question.user_answer != @question.correct_answer
-			@quiz.correct_questions + 0
+			@question.answered == 'true'
+			@quiz.number_answered + 1
+		elsif params['answer'] != @question.correct_answer
+			@question.answered == 'true'
+			@quiz.number_answered + 1
+		elsif @question.answered == 'true'
+			redirect_to "/questions/#{ @question.id }/grade"
 		end
+		if @quiz.number_answered == @quiz.number_of_questions
+			@quiz.completed? == 'true'
+		if @quiz.completed? == 'true'
+			@quiz.score == (@quiz.number_correct / @quiz.number_of_questions) * 100
+			@quiz.correct_questions == 0
+			@quiz.number_answered == 0
+		end
+	end
 	end
 end
