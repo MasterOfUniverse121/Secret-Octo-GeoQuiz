@@ -1,28 +1,8 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+THIS SITE IS FOR MATH QUIZZES.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Student wants to study for quiz. He goes on site and does a quiz.
+
+Teacher wants quiz questions for test. She goes to site and finds questions in the quiz.
+
+Student wants to sign in to retake a quiz they got wrong a few times. They sign in and retake it.

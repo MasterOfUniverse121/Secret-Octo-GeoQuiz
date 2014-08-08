@@ -8,6 +8,8 @@ class QuizzesController < ApplicationController
   end
 
   def show
+		@quiz.number_answered == 0
+		@quiz.correct_questions == 0
     @quiz = Quiz.find_by(id: params[:id])
 if session['username'] == nil
 	redirect_to "/", :notice => "Deal with it."
