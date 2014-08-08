@@ -4,8 +4,4 @@ class User < ActiveRecord::Base
 	
 	validates_presence_of :name,
 	:message => "cannot be empty."
-	validates_presence_of :password,
-	:message => "cannot be empty."
-	validates_presence_of :password_confirmation,
-	:message => "cannot be empty."
 end
